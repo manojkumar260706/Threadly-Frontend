@@ -1,0 +1,107 @@
+.home-feed {
+    animation: fadeIn var(--transition-base) ease;
+}
+
+.home-feed__header {
+    margin-bottom: var(--space-6);
+}
+
+.home-feed__title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-extrabold);
+    margin-bottom: var(--space-1);
+}
+
+.home-feed__subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.home-feed__tabs {
+    display: flex;
+    gap: var(--space-1);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    margin-bottom: var(--space-6);
+    width: fit-content;
+}
+
+.home-feed__tab {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.home-feed__tab:hover {
+    color: var(--color-text);
+}
+
+.home-feed__tab--active {
+    background: var(--color-primary);
+    color: white;
+}
+
+.home-feed__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.home-feed__empty {
+    text-align: center;
+    padding: var(--space-16) var(--space-4);
+    color: var(--color-text-muted);
+}
+
+.home-feed__empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.home-feed__empty-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.home-feed__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding: var(--space-4) 0;
+}
+
+.home-feed__page-btn {
+    padding: var(--space-2) var(--space-5);
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.home-feed__page-btn:hover:not(:disabled) {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary);
+}
+
+.home-feed__page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.home-feed__page-info {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}

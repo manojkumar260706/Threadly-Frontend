@@ -1,0 +1,172 @@
+/* ── Share Modal Overlay ── */
+.share-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+/* ── Modal Container ── */
+.share-modal {
+    background: var(--color-bg-elevated);
+    border: var(--border);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 480px;
+    padding: var(--space-6);
+    animation: shareModalIn 0.25s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+@keyframes shareModalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ── Header ── */
+.share-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+}
+
+.share-modal__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+}
+
+.share-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+}
+
+.share-modal__close:hover {
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+/* ── Social Options Grid ── */
+.share-modal__options {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
+    scrollbar-width: none;
+}
+
+.share-modal__options::-webkit-scrollbar {
+    display: none;
+}
+
+.share-modal__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    min-width: 56px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.share-modal__option:hover {
+    transform: scale(1.08);
+}
+
+.share-modal__option:active {
+    transform: scale(0.95);
+}
+
+.share-modal__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: box-shadow var(--transition-fast);
+}
+
+.share-modal__option:hover .share-modal__icon {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.share-modal__label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* ── Copy Link Bar ── */
+.share-modal__link-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius-full);
+    padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+}
+
+.share-modal__link-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    outline: none;
+    min-width: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.share-modal__copy-btn {
+    padding: var(--space-2) var(--space-5);
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.share-modal__copy-btn:hover {
+    background: var(--color-primary-hover);
+    box-shadow: var(--shadow-glow);
+}
+
+.share-modal__copy-btn--copied {
+    background: #22c55e;
+}
+
+.share-modal__copy-btn--copied:hover {
+    background: #16a34a;
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.3);
+}

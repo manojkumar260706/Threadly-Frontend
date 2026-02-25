@@ -1,0 +1,235 @@
+/* ── CSS Reset & Global Styles ── */
+@import './variables.css';
+@import './animations.css';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 17.6px;
+    /* 16px × 1.1 = 110% feel at default zoom */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-surface-border);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* ── Selection ── */
+::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+}
+
+/* ── Focus Styles ── */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ── Utility Classes ── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ── Code blocks (markdown) ── */
+code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--color-surface);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    color: var(--color-primary);
+}
+
+pre {
+    font-family: var(--font-mono);
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: var(--color-text);
+}
+
+/* ── Markdown Content ── */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-bold);
+    line-height: 1.3;
+}
+
+.markdown-content h1 {
+    font-size: var(--text-2xl);
+}
+
+.markdown-content h2 {
+    font-size: var(--text-xl);
+}
+
+.markdown-content h3 {
+    font-size: var(--text-lg);
+}
+
+.markdown-content p {
+    margin-bottom: var(--space-4);
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    list-style: disc;
+}
+
+.markdown-content ol {
+    list-style: decimal;
+}
+
+.markdown-content blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding-left: var(--space-4);
+    margin: var(--space-4) 0;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.markdown-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color var(--transition-fast);
+}
+
+.markdown-content a:hover {
+    text-decoration-color: var(--color-primary);
+}
+
+.markdown-content img {
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0;
+}
+
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-4) 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: var(--border);
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+}
+
+.markdown-content th {
+    background: var(--color-surface);
+    font-weight: var(--font-semibold);
+}
